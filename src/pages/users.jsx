@@ -328,11 +328,13 @@ function Users() {
     if (orderBy === "LastSeen") {
       valA = getTimeInSeconds(valA);
       valB = getTimeInSeconds(valB);
+      if (valA == 0 || valB == 0) return -1;
     } else if (orderBy === "TotalPlays" || orderBy === "TotalWatchTime") {
-      valA = parseInt(valA);
-      valB = parseInt(valB);
+      valA = parseInt(valA ?? 0);
+      valB = parseInt(valB ?? 0);
     }
-
+    if (typeof valA === "string") valA = valA.toLowerCase();
+    if (typeof valB === "string") valB = valB.toLowerCase();
     if (valB < valA) return -1;
     if (valB > valA) return 1;
     return 0;
