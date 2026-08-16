@@ -259,6 +259,7 @@ class JellyfinAPI {
             fields: "MediaSources,DateCreated,Genres",
             startIndex: startIndex,
             recursive: recursive,
+            collapseBoxSetItems: false,
             limit: limit,
             isMissing: false,
             excludeLocationTypes: "Virtual",
